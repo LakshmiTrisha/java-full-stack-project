@@ -1,0 +1,353 @@
+:root {
+    --bg: #f6f3ea;
+    --ink: #192119;
+    --accent: #d96f1f;
+    --accent-soft: #f5b97a;
+    --panel: #fffaf0;
+    --line: #e4dac8;
+    --ok: #2f7d44;
+    --warn: #8d5317;
+    --danger: #8e1b15;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", "Trebuchet MS", sans-serif;
+    color: var(--ink);
+    background:
+            radial-gradient(circle at 15% 10%, #ffdcba 0%, transparent 35%),
+            radial-gradient(circle at 85% 0%, #ffe8c7 0%, transparent 30%),
+            var(--bg);
+}
+
+.hidden {
+    display: none !important;
+}
+
+.login-view {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 1rem;
+    background:
+            radial-gradient(circle at 10% 15%, #fce6d0 0%, transparent 40%),
+            radial-gradient(circle at 90% 10%, #fdd7b8 0%, transparent 30%),
+            linear-gradient(155deg, #2a3e3f 0%, #4c5d3f 45%, #d96f1f 100%);
+}
+
+.login-card {
+    width: min(440px, 96%);
+    background: rgba(255, 250, 240, 0.96);
+    border: 1px solid #e6d5ba;
+    border-radius: 16px;
+    padding: 1.2rem;
+    box-shadow: 0 14px 32px rgba(28, 20, 8, 0.2);
+    animation: rise 450ms ease-out;
+    text-align: center;
+}
+
+.login-eyebrow {
+    margin-top: 0;
+}
+
+.login-subtitle {
+    color: #4d5547;
+    margin-bottom: 0.9rem;
+}
+
+.login-hint {
+    margin: 0.8rem 0 0;
+    font-size: 0.9rem;
+    color: #5f5d4d;
+}
+
+.login-credentials {
+    margin: 0.85rem auto 0;
+    width: min(320px, 100%);
+    background: #fff6e8;
+    border: 1px dashed #d6b78f;
+    border-radius: 12px;
+    padding: 0.7rem;
+}
+
+.login-credentials-title {
+    margin: 0 0 0.35rem;
+    font-size: 0.86rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #7b4f22;
+}
+
+.login-credentials p {
+    margin: 0.2rem 0;
+}
+
+.hero {
+    position: relative;
+    min-height: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    background: linear-gradient(125deg, #24383a 0%, #2f4f4f 40%, #425a3f 100%);
+    color: #fff9ee;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+            -45deg,
+            rgba(255, 255, 255, 0.03),
+            rgba(255, 255, 255, 0.03) 10px,
+            transparent 10px,
+            transparent 20px
+    );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    width: min(920px, 92%);
+    animation: rise 600ms ease-out;
+}
+
+.logout-btn {
+    margin-top: 0.9rem;
+    background: linear-gradient(120deg, #8d5317, #c1762e);
+    width: fit-content;
+}
+
+.eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 0.4rem;
+    font-size: 0.78rem;
+    color: #ffd7ae;
+}
+
+h1 {
+    margin: 0;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.subtitle {
+    margin: 0.8rem auto 0;
+    max-width: 700px;
+    line-height: 1.45;
+}
+
+.container {
+    width: min(1150px, 94%);
+    margin: -30px auto 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.metric {
+    background: linear-gradient(180deg, #fffef9 0%, #fff4e2 100%);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 0.9rem;
+    box-shadow: 0 8px 22px rgba(33, 26, 7, 0.08);
+}
+
+.metric p {
+    margin: 0;
+    color: #5e5e4b;
+    font-size: 0.86rem;
+}
+
+.metric h3 {
+    margin: 0.3rem 0 0;
+    font-size: 1.6rem;
+}
+
+.grid {
+    display: grid;
+    gap: 0.9rem;
+    margin-bottom: 0.9rem;
+}
+
+.two-col {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+.panel {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1rem;
+    box-shadow: 0 8px 22px rgba(33, 26, 7, 0.08);
+}
+
+h2 {
+    margin-top: 0;
+    margin-bottom: 0.8rem;
+    font-size: 1.2rem;
+}
+
+.form-grid {
+    display: grid;
+    gap: 0.6rem;
+}
+
+input,
+textarea,
+select,
+button {
+    border-radius: 10px;
+    border: 1px solid #ccbba4;
+    padding: 0.65rem 0.75rem;
+    font: inherit;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(120deg, var(--accent), #ea8c43);
+    color: #fff;
+    font-weight: 600;
+    transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(217, 111, 31, 0.28);
+}
+
+.checkbox-row {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.95rem;
+}
+
+.row-between {
+    display: flex;
+    gap: 0.7rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-list {
+    display: grid;
+    gap: 0.55rem;
+    margin-top: 0.6rem;
+}
+
+.card {
+    background: #fff;
+    border: 1px solid #e7ddcd;
+    border-left: 6px solid var(--accent-soft);
+    padding: 0.65rem;
+    border-radius: 10px;
+    animation: fadeIn 220ms ease-out;
+}
+
+.card p {
+    margin: 0.2rem 0;
+    line-height: 1.4;
+}
+
+.tag {
+    display: inline-block;
+    font-size: 0.78rem;
+    padding: 0.12rem 0.45rem;
+    border-radius: 20px;
+    background: #f2ecdf;
+    border: 1px solid #deceaf;
+    margin-bottom: 0.2rem;
+}
+
+.actions {
+    display: flex;
+    gap: 0.4rem;
+    margin-top: 0.4rem;
+}
+
+.actions button {
+    padding: 0.45rem 0.55rem;
+    font-size: 0.86rem;
+}
+
+.btn-ok {
+    background: var(--ok);
+}
+
+.btn-warn {
+    background: var(--warn);
+}
+
+.btn-danger {
+    background: var(--danger);
+}
+
+.toast {
+    position: fixed;
+    right: 14px;
+    bottom: 14px;
+    background: #1e2c1f;
+    color: #fff;
+    padding: 0.55rem 0.8rem;
+    border-radius: 10px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(8px);
+    transition: all 180ms ease;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes rise {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 700px) {
+    .container {
+        margin-top: -20px;
+    }
+
+    .row-between {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}

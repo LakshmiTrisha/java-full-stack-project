@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emergency Resource Locator</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<section id="loginView" class="login-view">
+    <article class="login-card">
+        <p class="eyebrow login-eyebrow">Secure Access</p>
+        <h2>Community Emergency Portal Login</h2>
+        <p class="subtitle login-subtitle">Sign in to access live resource coordination data.</p>
+
+        <form id="loginForm" class="form-grid" onsubmit="return false;">
+            <input name="username" placeholder="Username" required />
+            <input name="password" type="password" placeholder="Password" required />
+            <button id="loginBtn" type="button">Login</button>
+        </form>
+
+        <div class="login-credentials">
+            <p class="login-credentials-title">Login Details</p>
+            <p><strong>Username:</strong> admin</p>
+            <p><strong>Password:</strong> admin123</p>
+        </div>
+        <p class="login-hint">Use the above credentials to continue.</p>
+    </article>
+</section>
+
+<div id="appShell" class="hidden" style="display: none;">
+<header class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <p class="eyebrow">Community Emergency Network</p>
+        <h1>Emergency Resource Locator and Help Coordination</h1>
+        <p class="subtitle">Locate active support centers, register urgent requests, and coordinate volunteers in one place.</p>
+        <button id="logoutBtn" class="logout-btn" type="button">Logout</button>
+    </div>
+</header>
+
+<main class="container">
+    <section class="metrics" id="metrics"></section>
+
+    <section class="grid two-col">
+        <article class="panel">
+            <h2>Add Resource Center</h2>
+            <form id="resourceForm" class="form-grid">
+                <input name="name" placeholder="Center name" required />
+                <select name="type" id="resourceTypeSelect" required></select>
+                <input name="location" placeholder="Location / area" required />
+                <input name="contact" placeholder="Contact number" />
+                <label class="checkbox-row">
+                    <input type="checkbox" name="active" checked /> Active now
+                </label>
+                <button type="submit">Save Center</button>
+            </form>
+        </article>
+
+        <article class="panel">
+            <h2>Raise Help Request</h2>
+            <form id="requestForm" class="form-grid">
+                <input name="requesterName" placeholder="Requester name" required />
+                <input name="phone" placeholder="Phone" required />
+                <input name="area" placeholder="Area" required />
+                <textarea name="description" placeholder="Describe urgent need" required></textarea>
+                <button type="submit">Submit Request</button>
+            </form>
+        </article>
+    </section>
+
+    <section class="grid two-col">
+        <article class="panel">
+            <div class="row-between">
+                <h2>Active Resource Centers</h2>
+                <select id="resourceFilter"></select>
+            </div>
+            <div id="resourceList" class="card-list"></div>
+        </article>
+
+        <article class="panel">
+            <h2>Volunteer Offers</h2>
+            <form id="volunteerForm" class="form-grid volunteer">
+                <input name="name" placeholder="Volunteer name" required />
+                <input name="phone" placeholder="Phone" required />
+                <input name="skill" placeholder="Skill (medical, transport, etc.)" required />
+                <input name="availability" placeholder="Availability" required />
+                <button type="submit">Register Volunteer</button>
+            </form>
+            <div id="volunteerList" class="card-list"></div>
+        </article>
+    </section>
+
+    <section class="panel">
+        <div class="row-between">
+            <h2>Community Requests</h2>
+            <select id="requestStatusFilter">
+                <option value="">All Statuses</option>
+                <option value="OPEN">Open</option>
+                <option value="IN_PROGRESS">In Progress</option>
+                <option value="RESOLVED">Resolved</option>
+            </select>
+        </div>
+        <div id="requestList" class="card-list"></div>
+    </section>
+
+    <p id="toast" class="toast"></p>
+</main>
+
+</div>
+<script src="app.js"></script>
+</body>
+</html>
